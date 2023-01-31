@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import React,{useState,createContext} from 'react';
+import CompA from './Components/CompA';
+
+const AppState = createContext();
+const numData = createContext();
 
 function App() {
+const [data,setData] = useState("Ranjeet Singh")
+const [name,setName] = useState({name: "Aastha Mishra",age: 23})
+const [number,setNumber] = useState("9370983954");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AppState.Provider value={{data,name}}>
+    <numData.Provider value={number}>
+      <Header />
+      <CompA />
+      </numData.Provider>
+      </AppState.Provider>
     </div>
   );
 }
 
 export default App;
+export {AppState,numData}
