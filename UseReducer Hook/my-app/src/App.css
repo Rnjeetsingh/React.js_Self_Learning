@@ -9,3 +9,15 @@ h1{
   color: white;
   padding: 15px;
 }
+.btn{
+  padding: 14px;
+  border-radius: 8px;
+  width: 200px;
+  background-color: rgb(96, 40, 148);
+  margin-left: 15px;
+  margin-top: 20px;
+  font-size: 22px;
+  color: white;
+  border: 3px solid rgb(33, 33, 146);
+  cursor: pointer;
+}

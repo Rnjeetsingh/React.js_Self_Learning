@@ -22,9 +22,9 @@ const [state,dispatch] = useReducer(reducer,0)
     <div className="App">
       <Header />
       <h1>{state}</h1>
-      <button onClick={() => dispatch({type:"INC"})}>INCRIMENT</button>
-      <button onClick={() => dispatch({type:"DEC"})}>DECRIMENT</button>
-      <button onClick={() => dispatch({type:"MUL"})}>MULTIPLICATION</button>
+      <button className='btn' onClick={() => dispatch({type:"INC"})}>INCRIMENT</button>
+      <button className='btn' onClick={() => dispatch({type:"DEC"})}>DECRIMENT</button>
+      <button className='btn' onClick={() => dispatch({type:"MUL"})}>MULTIPLICATION</button>
     </div>
   );
 }
