@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+h1{
+  margin: 0px;
+}
+.custom{
+  padding: 15px;
+  background-color: rgb(99, 38, 157);
+  color: white;
+}
