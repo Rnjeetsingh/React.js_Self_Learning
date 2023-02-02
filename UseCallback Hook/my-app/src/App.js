@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './Components/Header';
+import { useCallback,useState } from 'react';
+import Todos from './Components/Todos';
 function App() {
+ const [count,setCount] = useState(0);
+ const [todos,setTodos] = useState([]);
+
+ const increment = () => {
+  setCount((count) => count + 1);
+ }
+
+ const addtodos = useCallback(() => {
+  setTodos((todos) => [...todos,"New Todos"])
+ },[todos])
+  
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <button onClick={increment}>Increment </button>
+      <h1>Count : {count}</h1>
+      <hr />
+      <Todos todos={todos} addtodos={addtodos}/>
     </div>
   );
 }
